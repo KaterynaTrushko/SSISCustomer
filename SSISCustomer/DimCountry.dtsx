@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{836F04F6-366C-4678-8CD8-D84A1AE897F6}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{72B69B3A-168C-43D6-8B79-C690DDB0401D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -173,26 +173,26 @@
           version="1">
           <components>
             <component
-              refId="Package\Loud Country\Conversion"
+              refId="Package\Loud Country\Conversion str"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="Conversion"
+              name="Conversion str"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Loud Country\Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Loud Country\Conversion.Inputs[Data Conversion Input].Columns[CountryId]"
+                      refId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input].Columns[CountryId]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CountryId"
                       lineageId="Package\Loud Country\Country Txt.Outputs[Flat File Source Output].Columns[CountryId]" />
                     <inputColumn
-                      refId="Package\Loud Country\Conversion.Inputs[Data Conversion Input].Columns[CountryName]"
+                      refId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input].Columns[CountryName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -204,17 +204,17 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Loud Country\Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\Loud Country\Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[IntCountryId]"
+                      refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[IntCountryId]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[IntCountryId]"
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[IntCountryId]"
                       name="IntCountryId"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -230,12 +230,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[UCountryName]"
+                      refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[UCountryName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[UCountryName]"
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[UCountryName]"
                       name="UCountryName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -254,22 +254,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Loud Country\Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\Loud Country\Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Loud Country\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Loud Country\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\Loud Country\Conversion str.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -475,14 +475,14 @@
                       cachedDataType="i4"
                       cachedName="IntCountryId"
                       externalMetadataColumnId="Package\Loud Country\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryId]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[IntCountryId]" />
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[IntCountryId]" />
                     <inputColumn
                       refId="Package\Loud Country\Insert Destination.Inputs[OLE DB Destination Input].Columns[UCountryName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="UCountryName"
                       externalMetadataColumnId="Package\Loud Country\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[UCountryName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -568,14 +568,14 @@
                       cachedDataType="i4"
                       cachedName="IntCountryId"
                       externalMetadataColumnId="Package\Loud Country\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[IntCountryId]" />
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[IntCountryId]" />
                     <inputColumn
                       refId="Package\Loud Country\OLE DB Command.Inputs[OLE DB Command Input].Columns[UCountryName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="UCountryName"
                       externalMetadataColumnId="Package\Loud Country\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[UCountryName]" />
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[UCountryName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -702,7 +702,7 @@
                       cachedDataType="i4"
                       cachedName="IntCountryId"
                       externalMetadataColumnId="Package\Loud Country\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryId]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[IntCountryId]">
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[IntCountryId]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -716,7 +716,7 @@
                       cachedLength="50"
                       cachedName="UCountryName"
                       externalMetadataColumnId="Package\Loud Country\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryName]"
-                      lineageId="Package\Loud Country\Conversion.Outputs[Data Conversion Output].Columns[UCountryName]">
+                      lineageId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output].Columns[UCountryName]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -816,10 +816,10 @@
               refId="Package\Loud Country.Paths[Data Conversion Output]"
               endId="Package\Loud Country\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Data Conversion Output"
-              startId="Package\Loud Country\Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\Loud Country\Conversion str.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Loud Country.Paths[Flat File Source Output]"
-              endId="Package\Loud Country\Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Loud Country\Conversion str.Inputs[Data Conversion Input]"
               name="Flat File Source Output"
               startId="Package\Loud Country\Country Txt.Outputs[Flat File Source Output]" />
             <path
@@ -869,8 +869,8 @@
           Id="Package\Loud Country\OLE DB Command"
           TopLeft="390.499990984798,308.56666667872" />
         <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Loud Country\Conversion"
+          Size="145.6,41.6"
+          Id="Package\Loud Country\Conversion str"
           TopLeft="243.5,107.1" />
         <NodeLayout
           Size="208,41.6"
@@ -878,7 +878,7 @@
           TopLeft="205.1,208.7" />
         <EdgeLayout
           Id="Package\Loud Country.Paths[Data Conversion Output]"
-          TopLeft="309.1,148.7">
+          TopLeft="312.7,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -972,7 +972,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loud Country.Paths[Flat File Source Output]"
-          TopLeft="309.516666643901,46.23333333936">
+          TopLeft="313.116666643901,46.23333333936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
