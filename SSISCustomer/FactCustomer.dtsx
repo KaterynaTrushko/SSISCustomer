@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FactCustomer"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{38576E6C-CFE4-49C5-9901-2FB380BECCBD}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{8FE2883C-AC56-4691-93BE-AA2E67302D8E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2292,7 +2292,34 @@ where [refTable].[StatesName] = ?</property>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Truncate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{12B62A00-F5CF-49FC-A0B9-53A4855187AC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A9ACBD63-4D87-4E52-89CE-129CA4BE63E1}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[FactCustomer]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{31822AB8-5F72-4BFB-9603-B6DBE4FBBE2B}"
+          DTS:From="Package\Foreach Loop Container\Truncate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Load CSV" />
+      </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
@@ -2314,16 +2341,54 @@ where [refTable].[StatesName] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="125.6,41.6"
           Id="Package\Foreach Loop Container\Load CSV"
-          TopLeft="108.066652369831,98.1999977038308" />
+          TopLeft="111.399985521039,169.266663876309" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Foreach Loop Container\Truncate"
+          TopLeft="110.266650457515,36.333332363036" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="192.666650457515,77.933332363036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.4666649364763,91.3333315132728"
+              Start="0,0"
+              End="-18.4666649364763,83.8333315132728">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6666657566364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.6666657566364"
+                    Point2="0,45.6666657566364"
+                    Point3="-4,45.6666657566364" />
+                  <mssgle:LineSegment
+                    End="-14.4666649364763,45.6666657566364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.4666649364763,45.6666657566364"
+                    Point2="-18.4666649364763,45.6666657566364"
+                    Point3="-18.4666649364763,49.6666657566364" />
+                  <mssgle:LineSegment
+                    End="-18.4666649364763,83.8333315132728" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="377.6,255.2"
-          Size="377.6,298.4"
+          PanelSize="377.6,265.6"
+          Size="377.6,308.8"
           Id="Package\Foreach Loop Container"
           TopLeft="186.66665646765,59.7999995841583" />
       </GraphLayout>
@@ -2335,49 +2400,49 @@ where [refTable].[StatesName] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\Customer amount convert"
-          TopLeft="174.999990438422,220.999998463194" />
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\SalesLookup"
-          TopLeft="381.66664581332,609.666664129429" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\Conditional Split"
-          TopLeft="194.166656057868,289.466664653751" />
+          Size="147.2,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\read from CSV"
+          TopLeft="176.666657014026,54.5999996203185" />
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\Foreach Loop Container\Load CSV\Customer data ware house"
           TopLeft="371.666646359696,693.33332851198" />
         <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\Conditional Split"
+          TopLeft="194.166656057868,289.466664653751" />
+        <NodeLayout
           Size="148.8,41.6"
           Id="Package\Foreach Loop Container\Load CSV\CountryLookup"
           TopLeft="125.833326458103,384.733331531353" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\StatesLookup"
-          TopLeft="388.333312115736,515.66666423791" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\Conversion Error"
-          TopLeft="515.833305149444,278.333332326876" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\read from CSV"
-          TopLeft="176.666657014026,54.5999996203185" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Foreach Loop Container\Load CSV\Capital Name"
-          TopLeft="176.666657014026,153.466665666236" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\Foreach Loop Container\Load CSV\ProductLookup"
           TopLeft="347.499981013438,441.933331133591" />
         <NodeLayout
           Size="156.8,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\Conversion Error"
+          TopLeft="515.833305149444,278.333332326876" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\SalesLookup"
+          TopLeft="381.66664581332,609.666664129429" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\StatesLookup"
+          TopLeft="388.333312115736,515.66666423791" />
+        <NodeLayout
+          Size="156.8,41.6"
           Id="Package\Foreach Loop Container\Load CSV\Error Destination"
           TopLeft="583.333301461407,344.06666427407" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\Capital Name"
+          TopLeft="176.666657014026,153.466665666236" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Foreach Loop Container\Load CSV\Customer amount convert"
+          TopLeft="174.999990438422,220.999998463194" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Load CSV.Paths[Lookup Match Output3]"
           TopLeft="450.86664581332,651.26666412943">
@@ -2712,29 +2777,6 @@ where [refTable].[StatesName] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Load CSV\SalesLookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimSalesPerson]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Load CSV\Customer data ware house">
     <Properties>
       <Property>
@@ -2748,35 +2790,12 @@ where [refTable].[StatesName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimCountry]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Load CSV\StatesLookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimStates]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -2794,12 +2813,58 @@ where [refTable].[StatesName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimProduct]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load CSV\SalesLookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSalesPerson]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load CSV\StatesLookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimStates]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
