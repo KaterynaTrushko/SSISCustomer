@@ -1,0 +1,1 @@
+In SSAS I have set up connection to sourse, data vies, created Cube, I used MDX , tabular , hierarchical dimension , KPI , Calculated members , Aggregations , perspectives , translations , Many to many relationship.
