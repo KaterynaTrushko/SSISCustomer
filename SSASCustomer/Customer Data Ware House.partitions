@@ -1,0 +1,44 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="21c2e986-8156-4c92-a3be-b94e97ea6086" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Customer Data Ware House</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Customer</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4cb119ae-fd53-44b1-8814-4a123cf6a2e5">
+          <ID>Fact Customer</ID>
+          <Name>LessThan2015</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="88360e4b-b830-4f80-814a-f93515ad6cb4">
+            <DataSourceID>Customer Data Ware House</DataSourceID>
+            <QueryDefinition>SELECT [dbo].[FactCustomer].[CustomerCode],[dbo].[FactCustomer].[CustomerName],[dbo].[FactCustomer].[CustomerAmount],[dbo].[FactCustomer].[SalesDate],[dbo].[FactCustomer].[Countryid_fk],[dbo].[FactCustomer].[StatesId_fk],[dbo].[FactCustomer].[Productid_fk],[dbo].[FactCustomer].[SalesPersonId_fk]
+		FROM [dbo].[FactCustomer]
+		WHERE Year(SalesDate)&lt;2015</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+        <Partition dwd:design-time-name="d6ff5014-f11a-4af7-be38-9c5f8d370229">
+          <ID>Fact Customer 1</ID>
+          <Name>GreaterThanOrEqualTo2015</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="8703abdb-129e-43da-b3f0-418ac2650c2f">
+            <DataSourceID>Customer Data Ware House</DataSourceID>
+            <QueryDefinition>SELECT [dbo].[FactCustomer].[CustomerCode],[dbo].[FactCustomer].[CustomerName],[dbo].[FactCustomer].[CustomerAmount],[dbo].[FactCustomer].[SalesDate],[dbo].[FactCustomer].[Countryid_fk],[dbo].[FactCustomer].[StatesId_fk],[dbo].[FactCustomer].[Productid_fk],[dbo].[FactCustomer].[SalesPersonId_fk]
+		FROM [dbo].[FactCustomer]
+		WHERE Year(SalesDate)&gt;=2015</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
