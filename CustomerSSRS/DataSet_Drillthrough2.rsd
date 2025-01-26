@@ -15,7 +15,7 @@
 from [HumanResources].[EmployeeDepartmentHistory] as EH
 join [HumanResources].[Employee] as E
 on EH.BusinessEntityID = E.BusinessEntityID
-where EH.DepartmentID = @paramDepartmentID</CommandText>
+where EH.DepartmentID in (@paramDepartmentID)</CommandText>
     </Query>
     <Fields>
       <Field Name="DepartmentID">
